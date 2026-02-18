@@ -1,0 +1,138 @@
+ STARTING PIPELINE
+
+[Step 1] Loading Primary GCF Tables and External Metadata...
+[Step 2] Cleaning GCF data ...
+ -> Extracting taxonomy levels (Family, Genus, Species)...
+[Step 3] Preparing Metadata for mapping (Smart Biome)...
+
+[REPORT] Metadata Source Efficiency (Decision Chain):
+  -> environment_feature: 52098 samples (67.9%)
+  -> environment_biome: 1431 samples (1.9%)
+  -> biome: 20112 samples (26.2%)
+  -> unknown: 3096 samples (4.0%)
+
+--- PART A: JACCARD PIPELINE ---
+Individual GCF frequencies calculated.
+Counting pairs (Itertools)...
+Finished! Found 68595539 unique pairs.
+Filtering pairs with count >= 20...
+
+Building Jaccard Graph...
+Calculating Metrics (Betweenness, Harmonic, Neighborhood)...
+
+[Jaccard] Top 15 Communities by size:
+  Community_1: 220 members
+  Community_2: 180 members
+  Community_3: 162 members
+  Community_4: 149 members
+  Community_5: 148 members
+  Community_6: 147 members
+  Community_7: 140 members
+  Community_8: 125 members
+  Community_9: 124 members
+  Community_10: 102 members
+  Community_11: 95 members
+  Community_12: 92 members
+  Community_13: 90 members
+  Community_14: 88 members
+  Community_15: 88 members
+[METRIC] Jaccard Network Modularity (Q): 0.9554
+Mapping attributes to Graph (Optimized)...
+[REPORT] Biome mapping in subgraph: 100.0% (6482547/6482547)
+  -> Added 'product_categories' (Priority Logic) to 5201 nodes.
+  -> Added 'product_subcategories' (Priority Logic) to 5201 nodes.
+  -> Added 'family_id' (Priority Logic) to 5201 nodes.
+  -> Added 'genus_id' (Priority Logic) to 5201 nodes.
+  -> Added 'species_id' (Priority Logic) to 5201 nodes.
+  -> Added 'dominant_biome' (Priority Logic) to 5201 nodes.
+Generating Jaccard Plots...
+
+--- PART B: GLASSO PIPELINE ---
+ -> GCFs passing threshold: 1508
+ -> Final Matrix Shape: (61622, 1508)
+Fitting GLASSO model with Alpha=0.002...
+Core Graph reconstructed (Stable Sort for 100% Notebook Match).
+Nodes: 440, Edges: 1376
+
+[GLASSO] Top 15 Communities by size:
+  Community_1: 53 members
+  Community_2: 48 members
+  Community_3: 41 members
+  Community_4: 30 members
+  Community_5: 29 members
+  Community_6: 26 members
+  Community_7: 24 members
+  Community_8: 24 members
+  Community_9: 20 members
+  Community_10: 17 members
+  Community_11: 16 members
+  Community_12: 14 members
+  Community_13: 12 members
+  Community_14: 11 members
+  Community_15: 11 members
+[METRIC] GLASSO Network Modularity (Q): 0.6147
+Mapping attributes to Graph (Optimized)...
+[REPORT] Biome mapping in subgraph: 100.0% (5884716/5884716)
+  -> Added 'product_categories' (Priority Logic) to 440 nodes.
+  -> Added 'product_subcategories' (Priority Logic) to 440 nodes.
+  -> Added 'family_id' (Priority Logic) to 440 nodes.
+  -> Added 'genus_id' (Priority Logic) to 440 nodes.
+  -> Added 'species_id' (Priority Logic) to 440 nodes.
+  -> Added 'dominant_biome' (Priority Logic) to 440 nodes.
+
+--- PART C: SPEARMAN PIPELINE ---
+Calculating Spearman Correlation...
+Spearman Graph: 637 nodes
+   Metrics...
+
+[Spearman] Top 15 Communities by size:
+  Community_1: 53 members
+  Community_2: 52 members
+  Community_3: 48 members
+  Community_4: 30 members
+  Community_5: 27 members
+  Community_6: 25 members
+  Community_7: 24 members
+  Community_8: 24 members
+  Community_9: 21 members
+  Community_10: 20 members
+  Community_11: 19 members
+  Community_12: 17 members
+  Community_13: 17 members
+  Community_14: 9 members
+  Community_15: 8 members
+[METRIC] Spearman Network Modularity (Q): 0.4975
+Mapping attributes to Graph (Optimized)...
+[REPORT] Biome mapping in subgraph: 100.0% (5686044/5686044)
+  -> Added 'product_categories' (Priority Logic) to 637 nodes.
+  -> Added 'product_subcategories' (Priority Logic) to 637 nodes.
+  -> Added 'family_id' (Priority Logic) to 637 nodes.
+  -> Added 'genus_id' (Priority Logic) to 637 nodes.
+  -> Added 'species_id' (Priority Logic) to 637 nodes.
+  -> Added 'dominant_biome' (Priority Logic) to 637 nodes.
+
+=============================================
+ FINAL SUMMARY: JACCARD
+=============================================
+ -> Total Nodes (GCFs): 5201
+ -> Total Edges:        31558
+ -> Network Density:    0.00233
+ -> Total Communities:  567
+
+=============================================
+ FINAL SUMMARY: GLASSO
+=============================================
+ -> Total Nodes (GCFs): 440
+ -> Total Edges:        1376
+ -> Network Density:    0.01425
+ -> Total Communities:  23
+
+=============================================
+ FINAL SUMMARY: SPEARMAN
+=============================================
+ -> Total Nodes (GCFs): 637
+ -> Total Edges:        4155
+ -> Network Density:    0.02051
+ -> Total Communities:  93
+CROSS-METHOD VALIDATION
+MASTER PIPELINE DONE
