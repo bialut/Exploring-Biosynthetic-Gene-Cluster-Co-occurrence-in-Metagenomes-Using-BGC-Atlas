@@ -26,20 +26,6 @@ Due to GitHub's file size limitations, the raw datasets are **not included** in 
 * `metalog_samples.tsv`
 * `mgnify_samples.tsv`
 
-### Expected Directory Layout
-```text
-.
-├── code/
-├── data/
-│   ├── metalog_bgcs_with_gcf_and_tax.tsv
-│   ├── mgnify_bgcs_with_gcf_and_tax.tsv
-│   ├── metalog_samples.tsv
-│   └── mgnify_samples.tsv
-├── results_thesis/
-├── exported-comms-representatives-corr/
-├── environment.yml
-└── README.md
-```
 ### Requirements
 Ensure you have conda installed. Create and activate the environment using the provided file:
 ```bash
