@@ -1,6 +1,6 @@
 # GCF Network Inference & Analysis
 
-This repository contains the computational framework and analysis pipeline developed for my thesis. The project performs an end-to-end analysis of Gene Cluster Family (GCF) co-occurrence and co-abundance data using three distinct network inference methods: Jaccard Index, Graphical Lasso (GLASSO), and Spearman correlation.
+This repository contains the computational framework and analysis pipeline developed for my thesis. The project performs an end-to-end analysis of Gene Cluster Family (GCF) co-occurrence and co-abundance data using three distinct network inference methods: Jaccard Index, Graphical LASSO (GLASSO), and Spearman correlation.
 
 ## Repository Structure
 
